@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>Dia</label>
+    <input type="text" id="day" />
+    <input type="button" onclick="comprobar()" value="Enviar" />
+
+    <script>
+      function comprobar() {
+        let day = document.getElementById("day").value;
+        let mensaje = "Has introducido "+day+" y al siguiente dia será ";
+
+        switch (day.toLowerCase()) {
+          case "lunes":
+            mensaje += "martes";
+            break;
+          case "martes":
+            mensaje += "miercoles";
+            break;
+          case "miercoles":
+            mensaje += "jueves";
+            break;
+          case "jueves":
+            mensaje += "viernes";
+            break;
+          case "viernes":
+            mensaje += "sabado";
+            break;
+          case "sabado":
+            mensaje += "domingo";
+            break;
+          case "domingo":
+            mensaje += "lunes";
+            break;
+          default:
+            alert("No ha introducido un dia de la semana");
+            break;
+        }
+
+        alert(mensaje)
+      }
+    </script>
+  </body>
+</html>

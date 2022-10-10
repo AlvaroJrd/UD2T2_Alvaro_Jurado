@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Escriba un numero</label>
+    <input type="number" id="num"> 
+    <input type="button" onclick="comparador()" value="Enviar">
+
+    <script>
+        function comparador(){
+            let num = document.getElementById('num').value
+            if(num){
+                let aux
+                if(num > 0){
+                    aux = "positivo"
+                } else if(num < 0) {
+                    aux = "negativo"
+                } else{
+                    aux = "cero"
+                }
+                alert("El numero es "+aux)
+            } else{
+                alert("Debes rellenar el campo")
+            }
+        }
+    </script>
+</body>
+</html>

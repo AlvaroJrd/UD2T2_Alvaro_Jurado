@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Introduzca los datos de la persona</h3>
+    <label>Base imponible (BI):  </label>
+    <input type="number" id="bi" min="0"> 
+    <label>Tipo de iva: </label>
+    <select id="select">
+        <option value="normal">Normal (21%)</option>
+        <option value="reducido" >Reducido (10%)</option>
+      </select>
+    <label>Peso: </label>
+    <input type="number" id="peso"> 
+    
+    <input type="button" onclick="comprobar()" value="Enviar">
+
+    <script>
+        function comprobar(){
+            let bi = parseInt(document.getElementById('bi').value)
+            let iva = parseInt(document.querySelector('#select').value) == "normal" ? 21 : 10
+            let peso = parseFloat(document.getElementById('peso').value)
+            let envio = peso < 1 ? 3 : peso < 3 ? 5 : 10
+
+            let precio = bi + (bi*iva/100) + envio
+
+            alert("El precio seria de "+precio+"€")
+        }
+    </script>
+</body>
+</html>

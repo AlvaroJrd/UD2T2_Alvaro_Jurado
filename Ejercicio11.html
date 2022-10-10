@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Dia</label>
+    <input type="number" id="day" min="1" max="31">
+    <label>Mes</label>
+    <input type="number" id="month" min="1" max="12"> 
+    <label>Año</label>
+    <input type="number" id="year" min="1900" max="2022" >  
+    <input type="button" onclick="comprobar()" value="Enviar">
+
+    <script>
+        function comprobar(){
+            let day = parseInt(document.getElementById('day').value)
+            let month = parseInt(document.getElementById('month').value)
+            let year = parseInt(document.getElementById('year').value)
+
+            alert((day == 25 && month == 12) ? 
+            "La fecha "+day+"/"+month+"/"+year+" corresponde con navidad": 
+            "La fecha "+day+"/"+month+"/"+year+" NO corresponde con navidad")
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Insertar nombre...">
+    <input type="button" value="Insertar" onclick="insert()">
+
+    <ul id="lista"></ul>
+
+    <script>
+        function insert(){   
+            let name = document.getElementById('name').value;
+            if(name){   
+                var node = document.createElement('li');
+                node.appendChild(document.createTextNode(name));
+                
+                document.querySelector('ul').appendChild(node);
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

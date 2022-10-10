@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Introduzca los datos del coche</h3>
+    <label>Marca: </label>
+    <input type="text" id="marca"> 
+    <label>Modelo: </label>
+    <input type="text" id="modelo"> 
+    <input type="button" onclick="comprobar()" value="Enviar">
+
+    <script>
+        function comprobar(){
+            let marca = document.getElementById('sueldo').value
+            let modelo = parseInt(document.getElementById('modelo').value)
+            let descuento
+            
+            if(marca == "renault"){
+                descuento = 15
+            } else if(marca == "ford"){
+                if(modelo == "fiesta"){
+                    descuento = 7
+                }else{
+                    descuento = 10
+                }
+            } else {
+                descuento = 5
+            }
+            alert("Usted tiene un descuento del "+descuento+"%")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Juego de dados</h2>
+    <form>
+      <label>SALDO ACTUAL: <label id="dineroActual"></label></label> <br />
+      <br />
+      <label>Numero del 1 al 6: </label>
+      <input type="number" id="apuesta" /> <br />
+      <br />
+      <label>Dinero a apostar: </label>
+      <input type="number" id="dineroApostado" />
+      <input type="button" onclick="comprobar()" value="Enviar" />
+    </form>
+
+    <script>
+      dineroTotal = 50;
+      document.getElementById("dineroActual").innerHTML = dineroTotal;
+
+      function comprobar() {
+        let apuesta = parseInt(document.getElementById("apuesta").value);
+        let rand = Math.floor(Math.random() * 6) + 1;
+        let dineroApostado = parseInt(
+          document.getElementById("dineroApostado").value
+        );
+
+        if (dineroApostado > dineroTotal) {
+          alert("Error. Saldo insuficiente");
+          return;
+        } else if (dineroApostado < 1) {
+          alert("El dinero apostado no puede ser menor a 1");
+        }
+        
+        if (apuesta < 1 || apuesta > 6) {
+          alert("El numero debe estar comprendido entre 1 y 6");
+          return;
+        } 
+        
+
+        if (apuesta == rand) {
+          dineroTotal += dineroApostado;
+        } else {
+          dineroTotal -= dineroApostado;
+        }
+
+        console.log(rand);
+
+        console.log(dineroTotal);
+        document.getElementById("dineroActual").innerHTML = dineroTotal;
+      }
+    </script>
+  </body>
+</html>

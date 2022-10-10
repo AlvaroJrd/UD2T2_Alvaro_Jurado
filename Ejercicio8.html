@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nombre</label>
+    <input type="text" id="name"> 
+    <label>Edad</label>
+    <input type="number" id="age"> 
+    <input type="button" onclick="comparador()" value="Enviar">
+
+    <script>
+        function comparador(){
+            let age = document.getElementById('age').value
+            let name = document.getElementById('name').value
+            if(name && age){
+                let aux
+                if(age >=18){
+                    aux = "Ya eres mayor de edad"
+                } else{
+                    aux = "Todavia eres menor de edad"
+                }
+                alert("Buenas "+name+"! "+aux+" y llevas "+(parseInt(age)*365)+ "dias vividos")
+            } else{
+                alert("Debes rellenar los campos")
+            }
+        }
+    </script>
+</body>
+</html>

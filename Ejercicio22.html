@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Introduzca los datos de la persona</h3>
+    <label>Altura (en cm): </label>
+    <input type="number" id="altura" min="0" max="3"> 
+    <label>Edad: </label>
+    <input type="number" id="edad"> 
+    <label>Sexo: </label>
+    <select id="select">
+        <option value="hombre">Hombre</option>
+        <option value="mujer" >Mujer</option>
+      </select>
+    <input type="button" onclick="comprobar()" value="Enviar">
+
+    <script>
+        function comprobar(){
+            let altura = parseFloat(document.getElementById('altura').value)
+            let edad = parseInt(document.getElementById('edad').value)
+            let sexo = (document.querySelector('#select').value) == "mujer" ?  0.9 : 1
+            let peso = (50+((altura-150)/4)*3 + (edad-20)/4)*sexo
+            
+            alert("Su peso ideal sería: "+peso)
+
+        }
+    </script>
+</body>
+</html>

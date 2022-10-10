@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Introduzca los datos de la persona</h3>
+    <label>Sueldo: </label>
+    <input type="number" id="sueldo"> 
+    <label>Años de antiguedad</label>
+    <input type="number" id="antiguedad"> 
+    <input type="button" onclick="comprobar()" value="Enviar">
+
+    <script>
+        function comprobar(){
+            let sueldo = document.getElementById('sueldo').value
+            let antiguedad = parseInt(document.getElementById('antiguedad').value)
+
+            if(sueldo<1000){
+                if(antiguedad >= 10){
+                    alert("Su nuevo sueldo es de "+sueldo+(sueldo*20/100)+"€")
+                }else{
+                    alert("Su nuevo sueldo es de "+sueldo+(sueldo*5/100)+"€")
+                }
+            } else{
+                alert("No se actualiza el sueldo")
+            }
+
+        }
+    </script>
+</body>
+</html>
